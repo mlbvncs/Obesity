@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>three.ai</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body style="font-family: Roboto Mono;">
+    <header class="text-center mt-3">
+      <h1>© three.ai 2024</h1>
+    </header>
+    <main class="mt-5 mb-5">
+      <div>
+        <div class="container">
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="gênero">Gênero:</label>
+            </div>
+            <div class="col">
+              {% if gênero == 'Male' %}
+                 <input type="text" class="form-control" id="gênero" value="Masculino" readonly>
+              {% else %}
+                <input type="text" class="form-control" id="gênero" value="Feminino" readonly>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="idade">Idade:</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id="idade" value="{{idade}}" readonly>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="altura">Altura:</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id="altura" value="{{altura}}" readonly>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="peso">Peso:</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id="peso" name="peso" value="{{peso}}" readonly>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="histórico">Histórico familiar com excesso de peso:</label>
+            </div>
+            <div class="col">
+              {% if histórico == 'yes' %}
+                <input type="text" class="form-control" id="histórico" value="Sim" readonly>
+              {% else %}
+                <input type="text" class="form-control" id="histórico" value="Não" readonly>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="FAVC">Consumo frequente de alimentos calóricos:</label>
+            </div>
+            <div class="col">
+              {% if FAVC == 'yes' %}
+                <input type="text" class="form-control" id="FAVC" value="Sim" readonly>
+              {% else %}
+                <input type="text" class="form-control" id="FAVC" value="Não" readonly>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="FCVC">Consumo frequente de vegetais:</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id="FCVC" value="{{FCVC}} (escala entre 1 e 3)" readonly>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="NCP">Número de refeições principais:</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id="NCP" value="{{NCP}}" readonly>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="CAEC">Consumo de alimentos entre as refeições:</label>
+            </div>
+            <div class="col">
+              {% if CAEC == 'Sometimes' %}
+                <input type="text" class="form-control" id="CAEC" value="Às vezes" readonly>
+              {% elif CAEC == 'Frequently' %}
+                <input type="text" class="form-control" id="CAEC" value="Frequentemente" readonly>
+              {% elif CAEC == 'no' %}
+                <input type="text" class="form-control" id="CAEC" value="Não" readonly>
+              {% else %}
+                <input type="text" class="form-control" id="CAEC" value="Sempre" readonly>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="fumo">Hábito de fumar:</label>
+            </div>
+            <div class="col">
+              {% if fumo == 'yes' %}
+                <input type="text" class="form-control" id="fumo" value="Sim" readonly>
+              {% else %}
+                <input type="text" class="form-control" id="fumo" value="Não" readonly>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="CH2O">Consumo diário de água:</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id="CH2O" value="{{CH2O}} (escala entre 1 e 3)" readonly>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="SCC">Monitoramento de consumo de calorias:</label>
+            </div>
+            <div class="col">
+              {% if SCC == 'yes' %}
+                <input type="text" class="form-control" id="SCC" value="Sim" readonly>
+              {% else %}
+                <input type="text" class="form-control" id="SCC" value="Não" readonly>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="FAF">Frequência de atividade física:</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id="FAF" value="{{FAF}} (escala entre 1 e 3)" readonly>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="TUE">Tempo usando dispositivos tecnológicos voltados para a saúde:</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id="TUE" value="{{TUE}} (escala entre 1 e 3)" readonly>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="CALC">Consumo de álcool:</label>
+            </div>
+            <div class="col">
+              {% if CALC == 'Sometimes' %}
+                <input type="text" class="form-control" id="CALC" value="Às vezes" readonly>
+              {% elif CALC == 'Frequently' %}
+                <input type="text" class="form-control" id="CALC" value="Frequentemente" readonly>
+              {% else %}
+                <input type="text" class="form-control" id="CALC" value="Não" readonly>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col d-flex flex-row-reverse">
+              <label class="p-2" for="MTRANS">Meio de transporte:</label>
+            </div>
+            <div class="col">
+              {% if MTRANS == 'Public_Transportation' %}
+                <input type="text" class="form-control" id="MTRANS" value="Transporte Público" readonly>
+              {% elif MTRANS == 'Automobile' %}
+                <input type="text" class="form-control" id="MTRANS" value="Automóvel" readonly>
+              {% elif MTRANS == 'Walking' %}
+                <input type="text" class="form-control" id="MTRANS" value="Caminhada" readonly>
+              {% elif MTRANS == 'Motorbike' %}
+                <input type="text" class="form-control" id="MTRANS" value="Motocicleta" readonly>
+              {% else %}
+                <input type="text" class="form-control" id="MTRANS" value="Bicicleta" readonly>
+              {% endif %}
+            </div>
+          </div>
+          <div class="text-center mt-5">
+            <h1>Resultado:</h1>
+            <p style="font-size:20px">
+              {% if prediction == 'Overweight_Level_II' %}
+                Excesso de Peso Nível II
+              {% elif prediction == 'Normal_Weight' %}
+                Peso Normal
+              {% elif prediction == 'Insufficient_Weight' %}
+                Peso Insuficiente
+              {% elif prediction == 'Obesity_Type_III' %}
+                Obesidade Tipo III
+              {% elif prediction == 'Obesity_Type_II' %}
+                Obesidade Tipo II
+              {% elif prediction == 'Obesity_Type_I' %}
+                Obesidade Tipo I
+              {% elif prediction == 'Overweight_Level_I' %}
+                Excesso de Peso Nível I
+              {% endif %}
+            </p>
+          </div>
+        </div>
+        <div class="text-center">
+           <form action="/" method="POST">
+              <input type="submit" value="Calcular Novamente">
+           </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
